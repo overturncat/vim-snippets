@@ -63,12 +63,17 @@ for(${1:/*construct*/};${2:/*condition*/};${3:/*end*/})
 }
 endsnippet
 
-snippet fun "Basic c++ doxygen function template" b
+snippet fun "c++函数模板" b
 ${1:ReturnType} ${2:FunctionName}(${3:param})
 {
-	//@brief: ${4:brief}
+	//@brief: ${4:函数说明}
 	${0:/*FunctionBody*/}
 }
+endsnippet
+
+
+snippet using "using namespace ...;" b
+using namespace ${1:std};
 endsnippet
 
 snippet readfile "read file (readF)"
@@ -87,7 +92,7 @@ std::map<${1:key}, ${2:value}> map$0;
 endsnippet
 
 snippet vector "std::vector (v)"
-std::vector<${1:char}> v$0;
+std::vector<${1:char}> ${0:vec};
 endsnippet
 
 snippet tp "template <typename ..> (template)"
