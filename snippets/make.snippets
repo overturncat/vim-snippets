@@ -1,3 +1,4 @@
+#! /usr/bin/perl
 # base
 snippet base
 	.PHONY: clean, mrproper
@@ -18,21 +19,6 @@ snippet base
 	mrproper: clean
 		rm -f $1
 
-# 自定义
-snippet makefile
-	.PHONY: clean
-	
-	CC=g++
-	CFLAGS = -g -Wall
-	OBJ = ${1:main}.o ${2:class}.o  ${3:other}
-	DEPS = $2.h $3
-
-	%.o: %.c $(DEPS)
-		$(CC) $(CFLAGS) -c -o $@ $< 
-	main: $(OBJ)
-		$(CC) $(CFLAGS) -o $@ $^ 
-	clean:
-		rm -f *.o 
 
 # add
 snippet add

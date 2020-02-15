@@ -1,0 +1,22 @@
+# today
+snippet today
+	Today is the `date +%d.%m.%y`.
+endsnippet
+
+
+# 自定义
+snippet makefile
+.PHONY: clean
+
+CC=g++ 
+CFLAGS = -g -Wall
+OBJ = main.o `ls *.cpp |grep -v main.cpp | sed 's/cpp/o/g'` 
+DEPS = `ls *.h` 
+
+%.o: %.c $(DEPS)
+	$(CC) $(CFLAGS) -c -o $@ $< 
+main: $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $^ 
+clean:
+	rm -f *.o 
+endsnippet
